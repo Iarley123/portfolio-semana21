@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio de José Iarley</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #121a2e;
+      --text: #f4f7fb;
+      --muted: #aab5c8;
+      --accent: #68e1fd;
+      --accent2: #a78bfa;
+      --border: rgba(255,255,255,.12);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: radial-gradient(circle at top right, #1c2850 0, var(--bg) 42%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(11,16,32,.88); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    nav {
+      max-width: 1050px; margin: auto; padding: 16px 22px;
+      display: flex; justify-content: space-between; align-items: center; gap: 18px;
+    }
+    .logo { font-weight: 800; letter-spacing: .4px; }
+    .logo span { color: var(--accent); }
+    nav ul { list-style: none; display: flex; gap: 20px; flex-wrap: wrap; }
+    nav a { color: var(--muted); text-decoration: none; font-size: .95rem; }
+    nav a:hover { color: var(--accent); }
+    main { max-width: 1050px; margin: auto; padding: 0 22px; }
+    section { padding: 74px 0; }
+    .hero { min-height: 76vh; display: grid; grid-template-columns: 1.3fr .7fr; align-items: center; gap: 42px; }
+    .eyebrow { color: var(--accent); text-transform: uppercase; letter-spacing: 2px; font-size: .8rem; font-weight: bold; }
+    h1 { font-size: clamp(2.5rem, 6vw, 4.6rem); line-height: 1.08; margin: 14px 0 20px; }
+    h1 span { color: var(--accent); }
+    .intro { color: var(--muted); font-size: 1.1rem; max-width: 600px; }
+    .actions { display: flex; gap: 12px; margin-top: 28px; flex-wrap: wrap; }
+    .btn { display: inline-block; padding: 12px 18px; border-radius: 10px; text-decoration: none; font-weight: bold; }
+    .primary { background: var(--accent); color: #07111c; }
+    .secondary { border: 1px solid var(--border); color: var(--text); }
+    .profile-card {
+      background: linear-gradient(145deg, rgba(104,225,253,.13), rgba(167,139,250,.12));
+      border: 1px solid var(--border); border-radius: 24px; padding: 28px;
+      text-align: center; box-shadow: 0 22px 70px rgba(0,0,0,.22);
+    }
+    .avatar {
+      width: 150px; height: 150px; margin: 0 auto 18px; border-radius: 50%;
+      display: grid; place-items: center; font-size: 3.2rem; font-weight: bold;
+      color: #07111c; background: linear-gradient(135deg, var(--accent), var(--accent2));
+    }
+    .profile-card p { color: var(--muted); margin-top: 8px; }
+    .section-heading { margin-bottom: 28px; }
+    h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 8px; }
+    .section-heading p, .about-text { color: var(--muted); }
+    .about-box, .project, .skill {
+      background: rgba(18,26,46,.82); border: 1px solid var(--border); border-radius: 16px;
+    }
+    .about-box { padding: 26px; }
+    .projects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .project { padding: 22px; transition: transform .2s, border-color .2s; }
+    .project:hover { transform: translateY(-5px); border-color: var(--accent); }
+    .project .number { color: var(--accent); font-size: .85rem; font-weight: bold; }
+    .project h3 { margin: 10px 0; }
+    .project p { color: var(--muted); font-size: .95rem; }
+    .tag { display: inline-block; margin-top: 16px; padding: 5px 9px; border-radius: 20px; background: rgba(104,225,253,.1); color: var(--accent); font-size: .78rem; }
+    .skills { display: flex; flex-wrap: wrap; gap: 12px; }
+    .skill { padding: 12px 16px; color: var(--muted); }
+    .contact-box { padding: 28px; border-radius: 18px; border: 1px solid var(--border); background: linear-gradient(135deg, rgba(104,225,253,.1), rgba(167,139,250,.1)); }
+    .contact-box p { color: var(--muted); margin: 10px 0 20px; }
+    footer { text-align: center; padding: 24px; color: var(--muted); border-top: 1px solid var(--border); font-size: .9rem; }
+    @media (max-width: 760px) {
+      nav { align-items: flex-start; flex-direction: column; }
+      nav ul { gap: 12px; }
+      .hero { grid-template-columns: 1fr; padding-top: 48px; min-height: auto; }
+      .profile-card { max-width: 380px; }
+      .projects { grid-template-columns: 1fr; }
+      section { padding: 52px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Iarley<span>.</span></div>
+      <ul>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div>
+        <p class="eyebrow">Portfólio profissional</p>
+        <h1>Olá, eu sou<br><span>José Iarley.</span></h1>
+        <p class="intro">Estudante de Desenvolvimento de Sistemas, interessado em tecnologia, criação de sites e desenvolvimento de soluções digitais.</p>
+        <div class="actions">
+          <a class="btn primary" href="#projetos">Ver projetos</a>
+          <a class="btn secondary" href="#contato">Entrar em contato</a>
+        </div>
+      </div>
+      <aside class="profile-card">
+        <div class="avatar">JI</div>
+        <h3>José Iarley</h3>
+        <p>Estudante de Desenvolvimento de Sistemas</p>
+      </aside>
+    </section>
+
+    <section id="sobre">
+      <div class="section-heading">
+        <p class="eyebrow">Conheça um pouco</p>
+        <h2>Sobre mim</h2>
+      </div>
+      <div class="about-box">
+        <p class="about-text">Estou concluindo o ensino médio junto ao curso técnico de Desenvolvimento de Sistemas. Tenho interesse em programação, desenvolvimento web e aprendizado contínuo. Meu objetivo é transformar ideias em projetos digitais úteis, acessíveis e bem organizados.</p>
+      </div>
+    </section>
+
+    <section id="projetos">
+      <div class="section-heading">
+        <p class="eyebrow">O que estou desenvolvendo</p>
+        <h2>Projetos em destaque</h2>
+        <p>Exemplos de projetos acadêmicos e estudos pessoais.</p>
+      </div>
+      <div class="projects">
+        <article class="project">
+          <span class="number">PROJETO 01</span>
+          <h3>Safeway</h3>
+          <p>Proposta de aplicativo com foco em mobilidade urbana e acesso a informações úteis para deslocamentos.</p>
+          <span class="tag">UX/UI · Projeto acadêmico</span>
+        </article>
+        <article class="project">
+          <span class="number">PROJETO 02</span>
+          <h3>Portfólio web</h3>
+          <p>Site responsivo para apresentar perfil, habilidades e projetos utilizando HTML e CSS.</p>
+          <span class="tag">HTML · CSS · JavaScript</span>
+        </article>
+        <article class="project">
+          <span class="number">PROJETO 03</span>
+          <h3>Estudos de programação</h3>
+          <p>Exercícios e pequenos programas desenvolvidos durante o curso técnico.</p>
+          <span class="tag">Lógica · Python</span>
+        </article>
+      </div>
+    </section>
+
+    <section id="habilidades">
+      <div class="section-heading">
+        <p class="eyebrow">Tecnologias e conhecimentos</p>
+        <h2>Habilidades</h2>
+      </div>
+      <div class="skills">
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">JavaScript básico</div>
+        <div class="skill">Python</div>
+        <div class="skill">SQL</div>
+        <div class="skill">Git e GitHub</div>
+        <div class="skill">Inglês avançado</div>
+      </div>
+    </section>
+
+    <section id="contato">
+      <div class="contact-box">
+        <p class="eyebrow">Vamos conversar</p>
+        <h2>Entre em contato</h2>
+        <p>Você pode adicionar aqui seu e-mail profissional e links para seus perfis.</p>
+        <a class="btn primary" href="mailto:seuemail@exemplo.com">Enviar e-mail</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>© <span id="year"></span> José Iarley · Portfólio profissional</footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
